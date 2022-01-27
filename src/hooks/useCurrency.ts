@@ -1,8 +1,9 @@
 import { MouseEvent, useState } from "react";
 import { CurrenciesName } from "../types/constants";
+import { useCurrencyStoreContext } from "../store";
 
 export const useCurrency = () => {
-  const [activeCurrency, setActiveCurrency] = useState<CurrenciesName>(CurrenciesName.RUB);
+  const { activeCurrency, setActiveCurrency } = useCurrencyStoreContext();
 
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault();

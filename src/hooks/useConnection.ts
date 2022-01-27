@@ -1,7 +1,7 @@
-import { useStoreContext } from "../store/filterStore";
+import { useFilterStoreContext } from "../store";
 
 export const useConnection = (id: number) => {
-  const { filter, setFilter } = useStoreContext();
+  const { filter, setFilter } = useFilterStoreContext();
 
   const handleClick = (id: number, isOnlyThisID?: boolean) => {
     if (isOnlyThisID) {

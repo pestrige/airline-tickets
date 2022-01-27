@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FILTER_ALL_ID } from "../types/constants";
 import ticketsRAW from "../tickets.json";
 import { TicketData } from "../types/types";
-import { useStoreContext } from "../store/filterStore";
+import { useFilterStoreContext } from "../store";
 
 const getFilteredTickets = (filters: number[], tickets: TicketData[]) => {
   if (filters.includes(FILTER_ALL_ID)) {
@@ -13,7 +13,7 @@ const getFilteredTickets = (filters: number[], tickets: TicketData[]) => {
 };
 
 export const useTickets = () => {
-  const {filter} = useStoreContext();
+  const {filter} = useFilterStoreContext();
   const [tickets, setTickets] = useState<TicketData[]>([]);
 
   useEffect(() => {

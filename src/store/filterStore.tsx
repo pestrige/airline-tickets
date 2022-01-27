@@ -6,19 +6,19 @@ interface MyStoreContext {
   setFilter: (value: number[]) => void;
 }
 
-const StoreContext = createContext<MyStoreContext>({
+const FilterStoreContext = createContext<MyStoreContext>({
   filter: [FILTER_ALL_ID],
   setFilter: () => {},
 });
 
-export const useStoreContext = () => useContext(StoreContext);
+export const useFilterStoreContext = () => useContext(FilterStoreContext);
 
-export const StoreProvider: FC = ({children}) => {
+export const FilterStoreProvider: FC = ({children}) => {
   const [filter, setFilter] = useState([FILTER_ALL_ID]);
 
   return (
-    <StoreContext.Provider value={{filter, setFilter}}>
+    <FilterStoreContext.Provider value={{filter, setFilter}}>
       {children}
-    </StoreContext.Provider>
+    </FilterStoreContext.Provider>
   );
 };

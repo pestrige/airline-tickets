@@ -6,6 +6,7 @@ import { CarriersMap } from "./carriersMap";
 import { formatPrice, getPostfix } from "../../helpers";
 import { Info } from "../Info/Info";
 import { TicketData } from "../../types/types";
+import { useCurrencyStoreContext } from "../../store";
 
 export const Ticket: FC<{ ticket: TicketData }> = ({ticket}) => {
   const {
@@ -22,6 +23,7 @@ export const Ticket: FC<{ ticket: TicketData }> = ({ticket}) => {
     price,
   } = ticket;
   const Logo = CarriersMap[carrier];
+  const { rates, activeCurrency } = useCurrencyStoreContext();
 
   return (
     <Wrapper>
@@ -32,7 +34,7 @@ export const Ticket: FC<{ ticket: TicketData }> = ({ticket}) => {
           </LogoWrapper>
           <BuyButton>
             <BuyText>Купить</BuyText>
-            <span>за {formatPrice(price)} &#8381;</span>
+            <span>за {formatPrice(price, rates, activeCurrency)}</span>
           </BuyButton>
         </BuySection>
 

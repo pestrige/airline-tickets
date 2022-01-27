@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { AirplaneCircle } from "./svg";
 import { Settings, TicketsList } from "./components";
-import { StoreProvider } from "./store/filterStore";
+import { FilterStoreProvider, CurrencyStoreProvider } from "./store";
 
 const Main = styled.div`
   min-height: 100vh;
@@ -39,10 +39,12 @@ const App: FC = () => {
 
       <Content>
         <h1 className='visually-hidden'>Подобрать билеты</h1>
-        <StoreProvider>
-          <Settings />
-          <TicketsList />
-        </StoreProvider>
+        <FilterStoreProvider>
+          <CurrencyStoreProvider>
+            <Settings />
+            <TicketsList />
+          </CurrencyStoreProvider>
+        </FilterStoreProvider>
       </Content>
     </Main>
   );

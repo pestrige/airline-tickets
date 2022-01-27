@@ -1,4 +1,4 @@
-import { Carriers } from "./constants";
+import { Carriers, CurrenciesName } from "./constants";
 
 export interface TicketData {
   origin: string;
@@ -28,4 +28,10 @@ export interface MainTheme {
     mainDark: string;
     white: string;
   }
+}
+
+export interface Rates {
+  [CurrenciesName.RUB]: number;
+  [CurrenciesName.USD]: number;
+  [CurrenciesName.EUR]: number;
 }
