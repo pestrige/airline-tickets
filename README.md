@@ -12,7 +12,7 @@
 - Context
  ---
 ### Ссылка на опубликованную версию:
-https://pestrige.github.io/airline-tickets/
+https://airline-tickets.vercel.app
 
 ---
 ### Превью:
