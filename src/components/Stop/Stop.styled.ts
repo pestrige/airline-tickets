@@ -15,7 +15,9 @@ export const Wrapper = styled.li`
 export const Button = styled.button`
   display: none;
   position: absolute;
-  top: 5px;
+  padding: 0;
+  margin: 0;
+  top: 7px;
   right: 15px;
   color: ${({theme}) => theme.colors.main};
   font-size: 12px;

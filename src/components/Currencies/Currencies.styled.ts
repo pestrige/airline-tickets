@@ -10,16 +10,18 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   &:first-child button {
     border-radius: 5px 0 0 5px;
-    border-right: none;
+    margin-right: -1px;
   }
   &:last-child button {
     border-radius: 0 5px 5px 0;
-    border-left: none;
+    margin-left: -1px;
   }
 `;
 
 export const Currency = styled.button<{isActive: boolean}>`
+  position: relative;
   padding: 12px 25px;
+  margin: 0;
   color: ${({theme}) => theme.colors.main};
   background-color: ${({theme}) => theme.colors.white};
   border: 1px solid ${({theme}) => theme.colors.defaultLight};
@@ -29,6 +31,7 @@ export const Currency = styled.button<{isActive: boolean}>`
   &:hover {
     border-color: ${({theme}) => theme.colors.main};
     background-color: ${({theme}) => theme.colors.mainLight};
+    z-index: 1;
   }
   
   ${(props) => props.isActive && css`
