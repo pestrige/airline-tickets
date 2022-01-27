@@ -1,5 +1,6 @@
 {
   "name": "airline-tikets",
+  "homepage": "https://pestrige.github.io/airline-tickets/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
